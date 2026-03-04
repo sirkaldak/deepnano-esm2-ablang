@@ -62,13 +62,12 @@ Use `eval_nai_seq.py` to run inference and (optionally) compute metrics if your 
 conda activate deepnano_ablang
 
 python eval_nai_seq.py \
-  --csv data/Sabdab/NAI_test.csv \
+  --csv /path/to/your/csv_file.csv \
   --ckpt /path/to/your_checkpoint.model \
   --esm2 /path/to/esm2_t6_8M_UR50D \
   --bs 8 \
   --finetune 0 \
-  --out_csv NAI_test_predictions.csv
-```
+  --out_csv predictions.csv
 
 This script will load the pre-trained model and make predictions on the **NAI_test.csv** or any other CSV file with nanobody-antigen sequences. The predictions will be saved to `NAI_test_predictions.csv`.
 
