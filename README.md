@@ -68,7 +68,7 @@ python eval_nai_seq.py \
   --bs 8 \
   --finetune 0 \
   --out_csv predictions.csv
-
+```
 This script will load the pre-trained model and make predictions on the **NAI_test.csv** or any other CSV file with nanobody-antigen sequences. The predictions will be saved to `NAI_test_predictions.csv`.
 
 ### File Structure
