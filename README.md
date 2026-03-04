@@ -71,7 +71,7 @@ python eval_nai_seq.py \
 
 This script will load the pre-trained model and make predictions on the **NAI_test.csv** or any other CSV file with nanobody-antigen sequences. The predictions will be saved to `NAI_test_predictions.csv`.
 
-## File Structure
+### File Structure
 
 - `README.md`: This file.
 - `train_Sabdab.py`: Script to train the model on the Sabdab dataset.
@@ -80,6 +80,6 @@ This script will load the pre-trained model and make predictions on the **NAI_te
 - `real_maprot.csv`: Example CSV containing nanobody and antigen sequences for testing.
 - `eval_nai_seq.py`: Evaluation script for the NAI sequence dataset.
 
-## Acknowledgements
+### Acknowledgements
 - The DeepNano model is based on work by [DeepNano authors](https://github.com/DeepNano).
 - The ESM2 model is based on work by [Facebook AI](https://huggingface.co/facebook/esm).
