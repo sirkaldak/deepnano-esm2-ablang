@@ -1,4 +1,3 @@
-
 # deepnano-esm2-ablang
 
 This repository contains code and pre-trained models for predicting nanobody-antigen binding affinity using DeepNano with ESM2 embeddings. It includes both 8M and 650M ESM2 model variants, along with training scripts and evaluation metrics for nanobody-antigen prediction.
@@ -6,17 +5,20 @@ This repository contains code and pre-trained models for predicting nanobody-ant
 ## Getting Started
 
 ### Requirements
-The code was executed under python=3.9 and torch=1.13.1+cu116, we recommend you to use similar package versions.
+The code was executed under python=3.9 and torch=1.13.1+cu116. We recommend you to use similar package versions.
 Install DeepNano:
+```bash
 git clone https://github.com/ddd9898/DeepNano.git
 cd DeepNano
 pip install -r requirements.txt
+```
+
 ### Model Weights
 
 Due to their large size, **model checkpoints and ESM2 weights are NOT included** in this repository.
 
 - **Trained checkpoints (AbLang+ESM2)** are provided here (Google Drive):  
-  https://drive.google.com/drive/folders/101wmck34b_u1tWuYMHXq53AzstgsvYVl?usp=drive_link
+  [Download Trained Checkpoints](https://drive.google.com/drive/folders/101wmck34b_u1tWuYMHXq53AzstgsvYVl?usp=drive_link)
 
 - **ESM2 backbone** (choose one):  
   1) Use a local ESM2 folder (recommended on servers).  
@@ -25,14 +27,15 @@ Due to their large size, **model checkpoints and ESM2 weights are NOT included**
 After downloading:
 - Put checkpoints anywhere you like (e.g., `output/checkpoint/`), and pass the file path via `--ckpt`.
 - Provide the ESM2 directory path via `--esm2`.
+
 ### Training the Model
 
 This repo expects the ESM2 model folder to exist under:
 
-- `DeepNano/models/<ESM2_NAME>`  (recommended), **or**
+- `DeepNano/models/<ESM2_NAME>` (recommended), **or**
 - `DeepNano/<ESM2_NAME>`
 
-Example folder name: `esm2_t6_8M_UR50D`, `esm2_t33_650M_UR50D`, etc.
+Example folder names: `esm2_t6_8M_UR50D`, `esm2_t33_650M_UR50D`, etc.
 
 Run training:
 
@@ -48,6 +51,7 @@ CUDA_VISIBLE_DEVICES=0 python train_Sabdab.py \
   --epochs 10 \
   --bs 32 \
   --lr 5e-5
+```
 
 ### Running Inference (NAI_test.csv / any CSV with sequences)
 
@@ -64,7 +68,9 @@ python eval_nai_seq.py \
   --bs 8 \
   --finetune 0 \
   --out_csv NAI_test_predictions.csv
+```
 
+This script will load the pre-trained model and make predictions on the **NAI_test.csv** or any other CSV file with nanobody-antigen sequences. The predictions will be saved to `NAI_test_predictions.csv`.
 
 ## File Structure
 
