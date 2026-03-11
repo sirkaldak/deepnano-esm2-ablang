@@ -20,7 +20,7 @@ DEEP = os.path.join(ROOT, "DeepNano")                          # ~/projects/deep
 sys.path.insert(0, DEEP)
 
 # ✅ 用 AbLang+ESM2 的模型
-from models.models_ablang_esm2 import DeepNano_seq, DeepNano
+from models_ablang_esm2 import DeepNano_seq, DeepNano
 from utils.dataloader import seqData_Sabdab, seqData_NBAT_Test
 from utils.evaluate import evaluate
 
