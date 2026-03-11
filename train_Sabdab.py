@@ -21,8 +21,8 @@ sys.path.insert(0, DEEP)
 
 # ✅ 用 AbLang+ESM2 的模型
 from models_ablang_esm2 import DeepNano_seq, DeepNano
-from utils.dataloader import seqData_Sabdab, seqData_NBAT_Test
-from utils.evaluate import evaluate
+from dataloader import seqData_Sabdab, seqData_NBAT_Test
+from evaluate import evaluate
 
 
 def get_args():
